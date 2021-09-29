@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* styling for header */
+
+header {
+    background-color: #0068a5;
+    width: 100%;
+    padding: 3vh 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    width: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo-img {
+    width: 100%;
+}
+
+nav {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+
+footer {
+    margin-top: 6vh;
+    background-color: #0068a5;
+    width: 100%;
+    padding: 2vh 5%;
+}
+
+.footer-text {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+
+/* filter container styling starts here */
+
+.filter-container {
+    width: 100%;
+    padding: 10vh 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search-container {
+    width: 50%;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1vh 7%;
+    font-size: 1.1rem;
+    color: #000;
+    border-radius: 1rem;
+    border: 1px solid #989898;
+    outline: none;
+}
+
+.fa-search {
+    position: absolute;
+    left: 2%;
+    top: 25%;
+    color: #989898;
+    font-size: 1.2rem;
+}
+
+.sort-container {
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    width: 45%;
+}
+
+.sort-text {
+    margin-right: 5%;
+    font-size: 1.1rem;
+}
+
+.sort-select {
+    padding: 1vh 1vw;
+    margin-right: 5%;
+    font-size: 1.1rem;
+    border-radius: 1rem;
+    border: 1px solid #989898;
+    outline: none;
+    background-color: #fff;
+}
+
+.sort-option {
+    color: #989898;
+}
+
+.sort-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 1vw;    
+    cursor: pointer;
+}
+
+.sort-icon-container-active {
+    background-color: #0068a5;
+}
+
+.sort-icon-container-active .fa-sort-alpha-up {
+    color: #fff;
+}
+
+.sort-icon-container-active .fa-sort-alpha-down {
+    color: #fff;
+}
