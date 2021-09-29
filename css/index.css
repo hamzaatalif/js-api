@@ -140,3 +140,35 @@ footer {
 .sort-icon-container-active .fa-sort-alpha-down {
     color: #fff;
 }
+
+/* styling for department cards container starts here */
+
+.faculty-cards-container {
+    width: 100%;
+    padding: 0 10% 5vh 10%;
+}
+
+.faculty-department {
+    font-size: 2rem;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 2vh;
+}
+
+.faculty-card {
+    background-color: #dddddd;
+    width: 100%;
+    margin-bottom: 8vh;
+    padding: 4vh 5%;
+    border-radius: 1rem;
+}
+
+.faculty-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1vh;
+}
+
+.last-name-value {
+    margin-left: 0.5vw;
+}
