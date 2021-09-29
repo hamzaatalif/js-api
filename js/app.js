@@ -2,6 +2,8 @@
 let facultyCardsParent = document.querySelector(".faculty-cards-container");
 // select the search input
 let searchInput = document.querySelector(".search-input");
+// select the sort dropdown
+let sortDropdown = document.querySelector("#sort-dropdown");
 
 // the end point where we need to make fetch request
 let url = "https://skills-assessment.oudemo.com?type=faculty";
@@ -106,7 +108,7 @@ let displayResult = async (url) => {
         facultyCardsParent.append(card);
     })
 
-    searchInput.addEventListener("keypress",(e)=>{
+    searchInput.addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
             let searchInputValue = searchInput.value;
@@ -116,8 +118,72 @@ let displayResult = async (url) => {
                 if (typeof faculty === "object" && (faculty.department.toLowerCase() === searchInputValue.toLowerCase() || faculty.firstname.toLowerCase() === searchInputValue.toLowerCase() || faculty.lastname.toLowerCase() === searchInputValue.toLowerCase() || faculty.title.toLowerCase() === searchInputValue.toLowerCase())) {
                     searchResult.push(createFacultyCard(faculty.department, faculty.firstname, faculty.lastname, faculty.title, faculty.email, faculty.phone, faculty["office-hours"]))
                 }
-            })            
+            })
             searchResult.forEach((card) => {
+                facultyCardsParent.append(card);
+            })
+        }
+    })
+
+    sortDropdown.addEventListener("change", (e) => {
+        console.log(e.target.value)
+        if (e.target.value == 1) {
+            facultyCardsParent.innerHTML = " ";
+            let sortResult = [];
+            facultyData.sort(dynamicSort("firstname"));
+            facultyData.forEach((faculty) => {
+                if (typeof faculty === "object") {
+                    sortResult.push(createFacultyCard(faculty.department, faculty.firstname, faculty.lastname, faculty.title, faculty.email, faculty.phone, faculty["office-hours"]))
+                }
+            })
+
+
+            sortResult.forEach((card) => {
+                facultyCardsParent.append(card);
+            })
+        }
+        else if (e.target.value == 2) {
+            facultyCardsParent.innerHTML = " ";
+            let sortResult = [];
+            facultyData.sort(dynamicSort("lastname"));
+            facultyData.forEach((faculty) => {
+                if (typeof faculty === "object") {
+                    sortResult.push(createFacultyCard(faculty.department, faculty.firstname, faculty.lastname, faculty.title, faculty.email, faculty.phone, faculty["office-hours"]))
+                }
+            })
+
+
+            sortResult.forEach((card) => {
+                facultyCardsParent.append(card);
+            })
+        }
+        else if (e.target.value == 3) {
+            facultyCardsParent.innerHTML = " ";
+            let sortResult = [];
+            facultyData.sort(dynamicSort("title"));
+            facultyData.forEach((faculty) => {
+                if (typeof faculty === "object") {
+                    sortResult.push(createFacultyCard(faculty.department, faculty.firstname, faculty.lastname, faculty.title, faculty.email, faculty.phone, faculty["office-hours"]))
+                }
+            })
+
+
+            sortResult.forEach((card) => {
+                facultyCardsParent.append(card);
+            })
+        }
+        else if (e.target.value == 4) {
+            facultyCardsParent.innerHTML = " ";
+            let sortResult = [];
+            facultyData.sort(dynamicSort("department"));
+            facultyData.forEach((faculty) => {
+                if (typeof faculty === "object") {
+                    sortResult.push(createFacultyCard(faculty.department, faculty.firstname, faculty.lastname, faculty.title, faculty.email, faculty.phone, faculty["office-hours"]))
+                }
+            })
+
+
+            sortResult.forEach((card) => {
                 facultyCardsParent.append(card);
             })
         }

@@ -121,25 +121,6 @@ footer {
     color: #989898;
 }
 
-.sort-icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1vh 1vw;    
-    cursor: pointer;
-}
-
-.sort-icon-container-active {
-    background-color: #0068a5;
-}
-
-.sort-icon-container-active .fa-sort-alpha-up {
-    color: #fff;
-}
-
-.sort-icon-container-active .fa-sort-alpha-down {
-    color: #fff;
-}
 
 /* styling for department cards container starts here */
 
